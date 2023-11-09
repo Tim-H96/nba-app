@@ -1,4 +1,4 @@
-import axios, { CanceledError } from "axios";
+import axios from "axios";
 import { List, ListItem } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 

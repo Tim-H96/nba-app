@@ -1,5 +1,13 @@
 import axios from "axios";
-import { List, ListItem } from "@chakra-ui/react";
+import {
+  Table,
+  TableContainer,
+  Tbody,
+  Td,
+  Th,
+  Thead,
+  Tr,
+} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 interface Player {
@@ -24,12 +32,24 @@ const PlayerList = () => {
   }, []);
 
   return (
-    <List>
-      {players &&
-        players.map((player) => (
-          <ListItem key={player.id}>{player.first_name}</ListItem>
-        ))}
-    </List>
+    <TableContainer>
+      <Table>
+        <Thead>
+          <Tr key={"header"}>
+            <Th>Player</Th>
+            <Th>Stats...</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          {players &&
+            players.map((player) => (
+              <Tr key={player.id}>
+                <Td>{player.first_name}</Td>
+              </Tr>
+            ))}
+        </Tbody>
+      </Table>
+    </TableContainer>
   );
 };
 

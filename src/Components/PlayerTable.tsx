@@ -16,7 +16,7 @@ interface Player {
   last_name: string;
 }
 
-const PlayerList = () => {
+const PlayerTable = () => {
   const [players, setPlayers] = useState<Player[]>();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const PlayerList = () => {
 
   return (
     <TableContainer>
-      <Table>
+      <Table variant={"simple"}>
         <Thead>
           <Tr key={"header"}>
             <Th>Player</Th>
@@ -44,7 +44,7 @@ const PlayerList = () => {
           {players &&
             players.map((player) => (
               <Tr key={player.id}>
-                <Td>{player.first_name}</Td>
+                <Td>{`${player.first_name} ${player.last_name}`}</Td>
               </Tr>
             ))}
         </Tbody>
@@ -53,4 +53,4 @@ const PlayerList = () => {
   );
 };
 
-export default PlayerList;
+export default PlayerTable;

@@ -1,6 +1,6 @@
 import { Box, Grid, GridItem } from "@chakra-ui/react";
 import "./App.css";
-import PlayerList from "./Components/PlayerList";
+import PlayerTable from "./Components/PlayerTable";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <GridItem bg={"coral"}>Header</GridItem>
       <GridItem bg={"lightblue"}>
         <Box paddingLeft={5} paddingRight={5}>
-          <PlayerList />
+          <PlayerTable />
         </Box>
       </GridItem>
     </Grid>
